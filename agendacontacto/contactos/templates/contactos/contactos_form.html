@@ -1,0 +1,67 @@
+{%load static crispy_forms_tags%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi agenda</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+    <style>
+        .text-dark-blue {
+            color: #004085; /* Un azul muy oscuro */
+        }
+    </style>
+
+
+
+
+</head>
+<body class="container" py-5>
+    <div class = "p-5 border-1 shadow rounded"> 
+        <h1 class="fw-bold text-dark-blue">Bienvenidos a Agendify</h1>
+
+        <h2>Con esta aplicación podras gestionar tus contactos en una agenda virtual</h2>
+
+        <p>
+            Consulta, agrega, edita y elimina tus contactos de forma facil y segura.
+        </p>
+    </div>
+
+    <div class="mt-5 text-left">
+        <h3 class="display-4 text-dark-blue fw-bold">
+            {%if contactos%}
+            Editar
+            {%else%}
+            Nuevo 
+            {%endif%}
+            contacto
+        </h3>
+    </div>
+    
+    
+
+    <form action="" method="post" class="mt-5 mx-auto" style="width: 420px;"enctype="multipart/form-data"novalidate>
+        {%csrf_token%}
+        {{form|crispy}}
+
+        <div class="text-end mt-4 mb-5">
+            <a href="{% url 'contactos_list' %}" class="btn btn-danger me-1">
+                Cancelar
+            </a>
+        
+            <button class="btn btn-success">
+                {%if contactos %}
+                Actualizar
+                {%else%}
+                Crear
+                {%endif%}
+                contacto
+            </button>
+        </div>
+        
+    </form>
+
+    <script src="{static'bootstrap/js/bootstrap.min.js'}"></script>
+</body>
+</html>

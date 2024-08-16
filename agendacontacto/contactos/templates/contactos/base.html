@@ -1,0 +1,43 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi agenda virtual</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+    <style>
+        body {
+            background-image: url("{% static 'Fondi4.jpg' %}"); /* Ruta a tu imagen */
+            background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            background-position: center center; /* Centra la imagen en la pantalla */
+        }
+        .text-dark-blue {
+            color: #004085; /* Un azul muy oscuro */
+        }
+    </style>
+
+
+
+
+</head>
+<body class="container" py-5>
+    <div class = "p-5 border-1 shadow"> 
+        <h1 class="fw-bold text-dark-blue">Bienvenidos a Agendify</h1>
+
+        <h2>Con esta aplicación podras gestionar tus contactos en una agenda virtual</h2>
+
+        <p>
+            Consulta, agrega, edita y elimina tus contactos de forma facil y segura.
+        </p>
+    </div>
+
+    {% block content%}
+    {%{% endblock %}%}
+
+
+    <script src="{static'bootstrap/js/bootstrap.min.js'}"></script>
+</body>
+</html>
